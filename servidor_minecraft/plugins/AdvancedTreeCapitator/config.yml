@@ -1,0 +1,127 @@
+# ============================================================
+#  Advanced TreeCapitator v1.3.0 — Configuration
+#  Author: Duong2012G
+#  https://modrinth.com/user/Duong2012G
+# ============================================================
+
+# Enable or disable the entire plugin without unloading it.
+enabled: true
+
+# ============================================================
+#  Activation Settings
+# ============================================================
+
+# If true, players must be holding an axe from tool-whitelist to activate.
+require-axe: true
+
+# If true, players must be sneaking (Shift) to activate tree capitator.
+require-sneak: true
+
+# If true, the plugin checks that the log cluster has at least one adjacent
+# leaf block before activating. This prevents TreeCapitator from triggering
+# on player-built structures made of log blocks (houses, cabins, etc.).
+# Note: Nether stems and Bamboo automatically bypass this check since they
+# have no leaf blocks. Disable only if you need to chop decorative log builds.
+require-leaves: true
+
+# ============================================================
+#  Mining Settings
+# ============================================================
+
+# Maximum number of log blocks broken in a single tree felling action.
+# If the tree exceeds this limit, only blocks up to the limit are broken
+# (partial chop — the rest can be harvested with additional swings).
+max-blocks: 100
+
+# Cooldown between tree felling actions per player (milliseconds).
+cooldown-ms: 200
+
+# Break leaves adjacent to the felled logs.
+# Uses 26-direction scanning so diagonal leaves (Dark Oak, Jungle) are always caught.
+# Note: Leaves drop normally according to your axe's Fortune or Silk Touch enchantment.
+# Leaves are NOT broken when the tool is trimmed due to low durability.
+break-leaves: false
+
+# ============================================================
+#  Tool Durability
+# ============================================================
+
+# Apply extra durability loss proportional to the number of blocks broken.
+damage-axe: true
+
+# Durability lost per log block broken (1.0 = 1 durability point per block).
+# Unbreaking is automatically respected using Minecraft's probability formula.
+# The axe's remaining durability is pre-checked before breaking extra blocks
+# so the tool cannot fell more logs than its durability allows.
+damage-multiplier: 1.0
+
+# How many leaf blocks count as one durability hit when break-leaves is true.
+# Default: 10 (every 10 leaves broken costs 1 durability point).
+# Increase this value to make leaves cheaper on your axe; decrease to make
+# it more expensive. Must be at least 1.
+leaf-durability-ratio: 10
+
+# ============================================================
+#  Fortune & Silk Touch
+# ============================================================
+# No extra configuration needed — the plugin uses breakNaturally(tool),
+# which delegates to Minecraft's own drop calculator:
+#   - Fortune:    increases drops (saplings, apples, sticks) exactly as normal chopping
+#   - Silk Touch: drops the log block itself instead of the processed form
+# Both enchantments apply automatically to every block in the tree.
+# ============================================================
+
+# ============================================================
+#  Effects
+# ============================================================
+
+# Spawn block-break particles at the origin block when a tree is felled.
+particle-effect: true
+
+# Play a wood-break sound when a tree is felled.
+sound-effect: true
+
+# ============================================================
+#  World Restrictions
+#  Leave both lists empty to allow all worlds.
+#  If whitelist-worlds is non-empty, only those worlds are allowed.
+#  If blacklist-worlds is non-empty, those worlds are blocked.
+# ============================================================
+whitelist-worlds: []
+blacklist-worlds: []
+
+# ============================================================
+#  Log Types
+#  Block types recognised as tree logs (Material enum names, case-insensitive).
+#  Add or remove entries to control which blocks trigger tree capitator.
+# ============================================================
+log-types:
+  # Overworld
+  - OAK_LOG
+  - SPRUCE_LOG
+  - BIRCH_LOG
+  - JUNGLE_LOG
+  - ACACIA_LOG
+  - DARK_OAK_LOG
+  - MANGROVE_LOG
+  - CHERRY_LOG
+  - PALE_OAK_LOG
+  # Nether (no leaves — require-leaves is bypassed automatically)
+  - CRIMSON_STEM
+  - WARPED_STEM
+  # Bamboo (1.20+, no leaves — require-leaves is bypassed automatically)
+  - BAMBOO_BLOCK
+  # Mushroom (optional — uncomment to enable huge-mushroom felling)
+  # - MUSHROOM_STEM
+
+# ============================================================
+#  Tool Whitelist
+#  Axes allowed to trigger tree capitator.
+# ============================================================
+tool-whitelist:
+  - WOODEN_AXE
+  - STONE_AXE
+  - IRON_AXE
+  - GOLDEN_AXE
+  - DIAMOND_AXE
+  - NETHERITE_AXE

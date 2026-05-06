@@ -1,0 +1,46 @@
+{
+  "stats": {
+    "minecraft:dropped": {
+      "minecraft:wheat_seeds": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:spruce_log": 62,
+      "minecraft:brown_mushroom": 1,
+      "minecraft:wheat_seeds": 1
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 2,
+      "minecraft:time_since_rest": 3647,
+      "minecraft:walk_one_cm": 5187,
+      "minecraft:leave_game": 2,
+      "minecraft:damage_taken": 30,
+      "minecraft:play_time": 3647,
+      "minecraft:jump": 170,
+      "minecraft:time_since_death": 3647,
+      "minecraft:drop": 1,
+      "minecraft:sprint_one_cm": 11919,
+      "minecraft:fall_one_cm": 6550,
+      "minecraft:total_world_time": 3647,
+      "minecraft:fly_one_cm": 30972,
+      "minecraft:crouch_one_cm": 311,
+      "minecraft:sneak_time": 158
+    },
+    "minecraft:used": {
+      "minecraft:wooden_axe": 5,
+      "minecraft:crafting_table": 2
+    },
+    "minecraft:mined": {
+      "minecraft:brown_mushroom": 1,
+      "minecraft:fern": 2,
+      "minecraft:spruce_log": 9,
+      "minecraft:large_fern": 2
+    },
+    "minecraft:crafted": {
+      "minecraft:stick": 4,
+      "minecraft:wooden_axe": 1,
+      "minecraft:spruce_planks": 16,
+      "minecraft:crafting_table": 2
+    }
+  },
+  "DataVersion": 4671
+}
